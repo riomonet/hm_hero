@@ -1,0 +1,24 @@
+
+
+* prevent gdb from freezing
+set non-stop on
+set pagination off
+run
+
+break with 
+interrupt
+
+C-c C-c in \*gud*
+
+
+* examin word sizes
+x/1tb 0xADDRESS   # 1 byte in binary
+x/1th 0xADDRESS   # 2 bytes (halfword)
+x/1tw 0xADDRESS   # 4 bytes (word)
+x/1tg 0xADDRESS   # 8 bytes (giant/quadword)
+
+The syntax is x/NFU where:
+
+N = count
+F = format (t for binary, x for hex, d for decimal, etc.)
+U = unit size (b=1, h=2, w=4, g=8 bytes)

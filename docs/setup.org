@@ -1,0 +1,43 @@
+
+* sdl_window
+
+** floating window by name of program
+#+begin_src elisp
+ (defun ari/exwm-float-hm-hero ()
+  (when (and exwm-class-name
+             (string= exwm-class-name "hm_hero"))
+    (exwm-floating-toggle-floating)
+    (exwm-layout-hide-mode-line)))
+
+ (add-hook 'exwm-manage-finish-hook #'ari/exwm-float-hm-hero)
+  
+#+end_src
+
+
+** release characters by name of program
+#+begin_src elisp
+  (defun ari/exwm-char-hm-hero ()
+  (when (and exwm-class-name
+(string= exwm-class-name "hm_hero"))
+    (exwm-input-release-keyboard)))
+
+(add-hook 'exwm-manage-finish-hook #'ari/exwm-char-hm-hero)
+#+end_src
+
+
+
+* c-styles handmade setup]
+
+#+begin_src elisp
+    (c-add-style "handmade"
+                 '("bsd"
+                   (c-offsets-alist
+                    (case-label . +)                
+                    (statement-case-open . 0)       
+                    (substatement-open . 0)         
+                    (block-open . 0)
+  		  )))
+
+
+#+end_src
+

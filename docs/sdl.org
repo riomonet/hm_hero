@@ -1,0 +1,6 @@
+* casts and types
+
+** Event Message Types
+p (SDL_EventType)Message.type 
+p (SDL_WindowEventID)Message.window.event
+
