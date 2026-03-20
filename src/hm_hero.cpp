@@ -208,14 +208,15 @@ int main(int argc, char *argv[])
 	}
 	ControllerIndex++;
     }
-
-    /* If a window was successfully created then enter the game loop */
+    
+    /* If a window was successfully created allocate memory for the backbuffer
+     * and display the backbuffer, start the audio system.  */
     if (Window) {
 	Sdl2ResizeDibSection(Window,Renderer,&GlobalBackBuffer);
 	Sdl2DisplayBufferInWindow(Renderer,&GlobalBackBuffer);
 
 	GlobalRunning = true;
-	int XOffset = 0;
+	int XOffset = 0; // X and Y offset used for weird gradient texture.
 	int YOffset = 0;
 	SDL_AudioSpec AudioFmt = {};
 	platform_audio_settings AudioSettings = {};
